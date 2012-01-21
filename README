@@ -1,0 +1,123 @@
+
+Microsoft 
+01/27/2012
+Rev 1.0
+
+AWS SDK for Windows Whone
+Getting Started Guide
+ 
+Table of Content:
+
+1) License
+2) About this Development Guide
+3) Target Audience
+4) Conventions Used in this Document
+5) Requirements
+6) Install AWS SDK for Windows Phone
+7) Description of Installed Files
+8) Create a new Windows Phone project
+9) Add AWS References to the project
+10) Edit App.Config
+11) Using the AWS Namespace
+12) Start Writing Code	
+
+
+
+1) License
+
+   Copyright 2012 Microsoft Corp.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this software except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+ 
+2) About this Development Guide 
+
+If you have been developing mobile applications accessing AWS services, and are interested in having a Windows Phone version of your application or if you want to add AWS connectivity and integration to your existing Windows Phone application, then this guide is for you.
+The guide covers what you need to know to download and install the Amazon Web Services SDK for Windows Phone, and configure your Windows Phone application project to use the SDK.
+
+
+3) Target Audience 
+This document is for mobile application developers interested in using Amazon Web Services in their Windows Phone application.
+
+
+4) Conventions Used in this Document:
+
+Term 					Abbreviation 
+---------------------------------	------------
+Windows Phone				WP7
+Application Programming Interface	API
+Integrated Development Environment  	IDE
+Software Development Kit		SDK
+Amazon Web Services			AWS
+Amazon Simple Database service		SimpleDB
+Amazon Simple Storage Service		S3
+Amazon Simple Queue Service		SQS
+ 
+
+5) Requirements
+
+In order to install and use the AWS SDK for Windows Phone, the following are required:
+- Visual Studio 2010 Express for Windows Phone (or higher)
+- Windows Phone SDK
+You can download these tools from: http://www.microsoft.com/download/en/details.aspx?id=27570 
+In order to learn more about Windows Phone development, visit the following site: http://create.msdn.com/
+
+
+6) Install AWS SDK for Windows Phone
+
+Download the MSI file from this location: https://github.com/downloads/Microsoft-Interop/WP7-SDK-for-AWS/AWSWP7Setup.msi and run it.
+Note that you can access the course code of this open source project from the Microsoft-Interop section of GitHub.
+ 
+Follow the prompts and once complete files will be installed to the default location (C:\Program Files (x86)\AWS SDK for WP7).
+
+
+7) Description of Installed Files
+
+Within the installation directory the Bin subfolder contains the two files you'll need to add to your Windows Phone project. AWSWP7SDK.dll is the AWS library and app.config is the configuration file in which you'll specify your AWS account keys.
+
+  
+8) Create a new Windows Phone project
+
+The SDK can be used in conjunction with an existing Windows Phone project but the purposes of this guide we’ll be starting from scratch. Start Visual Studio and create a new project. Select a Visual C# Silverlight for Windows Phone template. Give the project a name and click OK.
+
+ 
+9) Add AWS References to the project
+
+In order to access AWS functionality we must make references within your project to the libraries we've just installed. Within the solution explorer right-click on the project name and select "Add Reference..." then navigate to the Browse tab and select AWSWP7SDK.dll from C:\Program Files (x86)\AWS SDK for WP7\Bin.
+  
+Right-click again and select "Add > Existing Item..." then select the app.config file from the same directory.
+
+
+10) Edit App.Config
+
+In order for the application to access AWS it will need references to your account information. Open the added app.config file by double-clicking on it within the solution explorer and replace the text within the Application Settings section with your specific AWS account keys as indicated. Save the file.
+
+ 
+11) Using the AWS Namespace
+
+One you've completed the above tasks you can then add references to the Amazon namespaces via the "using" keyword.
+
+ 
+12) Start Writing Code
+
+Now you’re ready to start implementing AWS functionality into your existing or new Windows Phone project. Demo webcasts are available which outline each of the samples included with the SDK:
+- Amazon S3 sample walkthrough video:
+http://channel9.msdn.com/Blogs/Interoperability/AWS-SDK-for-Windows-Phone-S3-sample-walkthrough
+- Amazon SQS sample walkthrough video:
+http://channel9.msdn.com/Blogs/Interoperability/AWS-SDK-for-Windows-Phone-SQS-sample-walkthrough
+- Amazon SimpleDB sample walkthrough video:
+http://channel9.msdn.com/Blogs/Interoperability/AWS-SDK-for-Windows-Phone-SimpleDB-sample-walkthrough
+
+
+ 
+ 

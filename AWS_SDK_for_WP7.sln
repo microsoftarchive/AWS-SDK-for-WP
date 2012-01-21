@@ -1,0 +1,180 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDKWP7", "AWSWP7SDK\AWSSDKWP7.csproj", "{6F4A2C48-D23B-42C2-8E84-437156BAAF29}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AWSSDKWP7Setup", "AWSWP7Setup\AWSWP7Setup.vdproj", "{6DC16F0D-4B74-4FAD-B7D1-11AAA3B9318C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A3D6E214-1EF5-431E-BF8E-F0E462913C45} = {A3D6E214-1EF5-431E-BF8E-F0E462913C45}
+		{AD94E6C4-EF36-4416-9367-2DC773466BFE} = {AD94E6C4-EF36-4416-9367-2DC773466BFE}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{EDBFA175-C1D9-4790-92A0-1CD4175877F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AmazonS3_Sample", "AmazonS3_Sample", "{0C233483-5904-490C-BA50-76B2B6989C58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AmazonSQS_Sample", "AmazonSQS_Sample", "{10C77A1A-615D-4599-B643-DA4C40912DD1}"
+	ProjectSection(SolutionItems) = preProject
+		Samples\AmazonSQS_Sample\AmazonSQS_Sample\ApplicationIcon.png = Samples\AmazonSQS_Sample\AmazonSQS_Sample\ApplicationIcon.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{1C689689-795D-4A7E-A5D7-ADC84B78666B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest_SQS", "UnitTest_SQS", "{BB73DF82-0160-47E9-A1E8-C093178E9AD9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest_S3", "UnitTest_S3", "{6821688B-8EBA-4067-96EF-7C7B603D3756}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest_Host_Project", "UnitTests\UnitTest_Host_Project\UnitTest_Host_Project.csproj", "{DBB3E63B-456C-4169-BFD6-94CE34CE9437}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest_S3", "UnitTests\UnitTest_S3\UnitTest_S3.csproj", "{D8E4989E-312F-4AFC-8401-E3CF84EA82F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{3A3F2706-5945-4D76-9C31-C0B1005E74AA}"
+	ProjectSection(SolutionItems) = preProject
+		Resources\amazonaws.ico = Resources\amazonaws.ico
+		Resources\AmazonS3_Sample.csproj = Resources\AmazonS3_Sample.csproj
+		Resources\AmazonS3_Sample.sln = Resources\AmazonS3_Sample.sln
+		Resources\AmazonSimpleDB_AsyncSample.csproj = Resources\AmazonSimpleDB_AsyncSample.csproj
+		Resources\AmazonSimpleDB_AsyncSample.sln = Resources\AmazonSimpleDB_AsyncSample.sln
+		Resources\AmazonSQS_Sample.csproj = Resources\AmazonSQS_Sample.csproj
+		Resources\AmazonSQS_Sample.sln = Resources\AmazonSQS_Sample.sln
+		Resources\app.config = Resources\app.config
+		Resources\EULA.rtf = Resources\EULA.rtf
+		Resources\License.txt = Resources\License.txt
+		Resources\logo_aws.jpg = Resources\logo_aws.jpg
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AmazonSimpleDB_AsyncSample", "AmazonSimpleDB_AsyncSample", "{FE110C66-9081-43FB-997C-24AA09D7DDB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonSimpleDB_AsyncSample", "Samples\AmazonSimpleDB_AsyncSample\AmazonSimpleDB_AsyncSample.csproj", "{BCEB2C1B-0B30-4109-8E90-AEE62125CF39}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6F4A2C48-D23B-42C2-8E84-437156BAAF29} = {6F4A2C48-D23B-42C2-8E84-437156BAAF29}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest_SimpleDB", "UnitTest_SimpleDB", "{ECB12F59-7BBA-4FC4-B98A-1640817F53EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest_SimpleDB", "UnitTests\UnitTest_SimpleDB\UnitTest_SimpleDB.csproj", "{0FE4F8D5-F3A6-4CEA-BC75-81E420CA16CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest_SQS", "UnitTests\UnitTest_SQS\UnitTest_SQS.csproj", "{DD47560E-63DC-4C25-ABC2-8A763FEB36C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WP7 Unit Test Framework", "WP7 Unit Test Framework", "{5DB2589B-7817-4299-B3FE-1997F0025439}"
+	ProjectSection(SolutionItems) = preProject
+		UnitTests\WP7 Unit Test Framework\Microsoft.Silverlight.Testing.dll = UnitTests\WP7 Unit Test Framework\Microsoft.Silverlight.Testing.dll
+		UnitTests\WP7 Unit Test Framework\Microsoft.Silverlight.Testing.pdb = UnitTests\WP7 Unit Test Framework\Microsoft.Silverlight.Testing.pdb
+		UnitTests\WP7 Unit Test Framework\Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.dll = UnitTests\WP7 Unit Test Framework\Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.dll
+		UnitTests\WP7 Unit Test Framework\Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.pdb = UnitTests\WP7 Unit Test Framework\Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.pdb
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonS3_Sample", "Samples\AmazonS3_Sample\AmazonS3_Sample.csproj", "{A3D6E214-1EF5-431E-BF8E-F0E462913C45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonSQS_Sample", "Samples\AmazonSQS_Sample\AmazonSQS_Sample\AmazonSQS_Sample.csproj", "{AD94E6C4-EF36-4416-9367-2DC773466BFE}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs1.interop.msftlabs.com/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AWSWP7SDK\\AWSWP7SDK.csproj
+		SccProjectName1 = AWSWP7SDK
+		SccLocalPath1 = AWSWP7SDK
+		SccProjectUniqueName2 = AWSWP7Setup\\AWSWP7Setup.vdproj
+		SccProjectName2 = AWSWP7Setup
+		SccLocalPath2 = AWSWP7Setup
+		SccProjectUniqueName3 = UnitTests\\UnitTest_Host_Project\\UnitTest_Host_Project.csproj
+		SccProjectTopLevelParentUniqueName3 = AWSWinPhone7SDK.sln
+		SccProjectName3 = UnitTests/UnitTest_Host_Project
+		SccLocalPath3 = UnitTests\\UnitTest_Host_Project
+		SccProjectUniqueName4 = UnitTests\\UnitTest_S3\\UnitTest_S3.csproj
+		SccProjectTopLevelParentUniqueName4 = AWSWinPhone7SDK.sln
+		SccProjectName4 = UnitTests/UnitTest_S3
+		SccLocalPath4 = UnitTests\\UnitTest_S3
+		SccProjectUniqueName5 = Samples\\AmazonSimpleDB_AsyncSample\\AmazonSimpleDB_AsyncSample.csproj
+		SccProjectTopLevelParentUniqueName5 = AWSWinPhone7SDK.sln
+		SccProjectName5 = Samples/AmazonSimpleDB_AsyncSample
+		SccLocalPath5 = Samples\\AmazonSimpleDB_AsyncSample
+		SccProjectUniqueName6 = UnitTests\\UnitTest_SimpleDB\\UnitTest_SimpleDB.csproj
+		SccProjectTopLevelParentUniqueName6 = AWSWinPhone7SDK.sln
+		SccProjectName6 = UnitTests/UnitTest_SimpleDB
+		SccLocalPath6 = UnitTests\\UnitTest_SimpleDB
+		SccProjectUniqueName7 = UnitTests\\UnitTest_SQS\\UnitTest_SQS.csproj
+		SccProjectTopLevelParentUniqueName7 = AWSWinPhone7SDK.sln
+		SccProjectName7 = UnitTests/UnitTest_SQS
+		SccLocalPath7 = UnitTests\\UnitTest_SQS
+		SccProjectUniqueName8 = Samples\\AmazonS3_Sample\\AmazonS3_Sample.csproj
+		SccProjectTopLevelParentUniqueName8 = AWSWinPhone7SDK.sln
+		SccProjectName8 = Samples/AmazonS3_Sample
+		SccLocalPath8 = Samples\\AmazonS3_Sample
+		SccProjectUniqueName9 = Samples\\AmazonSQS_Sample\\AmazonSQS_Sample\\AmazonSQS_Sample.csproj
+		SccProjectTopLevelParentUniqueName9 = AWSWinPhone7SDK.sln
+		SccProjectName9 = Samples/AmazonSQS_Sample/AmazonSQS_Sample
+		SccLocalPath9 = Samples\\AmazonSQS_Sample\\AmazonSQS_Sample
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F4A2C48-D23B-42C2-8E84-437156BAAF29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F4A2C48-D23B-42C2-8E84-437156BAAF29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F4A2C48-D23B-42C2-8E84-437156BAAF29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F4A2C48-D23B-42C2-8E84-437156BAAF29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DC16F0D-4B74-4FAD-B7D1-11AAA3B9318C}.Debug|Any CPU.ActiveCfg = Debug
+		{6DC16F0D-4B74-4FAD-B7D1-11AAA3B9318C}.Release|Any CPU.ActiveCfg = Release
+		{6DC16F0D-4B74-4FAD-B7D1-11AAA3B9318C}.Release|Any CPU.Build.0 = Release
+		{DBB3E63B-456C-4169-BFD6-94CE34CE9437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBB3E63B-456C-4169-BFD6-94CE34CE9437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBB3E63B-456C-4169-BFD6-94CE34CE9437}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DBB3E63B-456C-4169-BFD6-94CE34CE9437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBB3E63B-456C-4169-BFD6-94CE34CE9437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBB3E63B-456C-4169-BFD6-94CE34CE9437}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D8E4989E-312F-4AFC-8401-E3CF84EA82F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8E4989E-312F-4AFC-8401-E3CF84EA82F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8E4989E-312F-4AFC-8401-E3CF84EA82F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8E4989E-312F-4AFC-8401-E3CF84EA82F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCEB2C1B-0B30-4109-8E90-AEE62125CF39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCEB2C1B-0B30-4109-8E90-AEE62125CF39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCEB2C1B-0B30-4109-8E90-AEE62125CF39}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BCEB2C1B-0B30-4109-8E90-AEE62125CF39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCEB2C1B-0B30-4109-8E90-AEE62125CF39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCEB2C1B-0B30-4109-8E90-AEE62125CF39}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0FE4F8D5-F3A6-4CEA-BC75-81E420CA16CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FE4F8D5-F3A6-4CEA-BC75-81E420CA16CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FE4F8D5-F3A6-4CEA-BC75-81E420CA16CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FE4F8D5-F3A6-4CEA-BC75-81E420CA16CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD47560E-63DC-4C25-ABC2-8A763FEB36C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD47560E-63DC-4C25-ABC2-8A763FEB36C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD47560E-63DC-4C25-ABC2-8A763FEB36C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD47560E-63DC-4C25-ABC2-8A763FEB36C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3D6E214-1EF5-431E-BF8E-F0E462913C45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D6E214-1EF5-431E-BF8E-F0E462913C45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D6E214-1EF5-431E-BF8E-F0E462913C45}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A3D6E214-1EF5-431E-BF8E-F0E462913C45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D6E214-1EF5-431E-BF8E-F0E462913C45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3D6E214-1EF5-431E-BF8E-F0E462913C45}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AD94E6C4-EF36-4416-9367-2DC773466BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD94E6C4-EF36-4416-9367-2DC773466BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD94E6C4-EF36-4416-9367-2DC773466BFE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AD94E6C4-EF36-4416-9367-2DC773466BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD94E6C4-EF36-4416-9367-2DC773466BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD94E6C4-EF36-4416-9367-2DC773466BFE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0C233483-5904-490C-BA50-76B2B6989C58} = {EDBFA175-C1D9-4790-92A0-1CD4175877F4}
+		{10C77A1A-615D-4599-B643-DA4C40912DD1} = {EDBFA175-C1D9-4790-92A0-1CD4175877F4}
+		{FE110C66-9081-43FB-997C-24AA09D7DDB4} = {EDBFA175-C1D9-4790-92A0-1CD4175877F4}
+		{A3D6E214-1EF5-431E-BF8E-F0E462913C45} = {0C233483-5904-490C-BA50-76B2B6989C58}
+		{AD94E6C4-EF36-4416-9367-2DC773466BFE} = {10C77A1A-615D-4599-B643-DA4C40912DD1}
+		{BB73DF82-0160-47E9-A1E8-C093178E9AD9} = {1C689689-795D-4A7E-A5D7-ADC84B78666B}
+		{6821688B-8EBA-4067-96EF-7C7B603D3756} = {1C689689-795D-4A7E-A5D7-ADC84B78666B}
+		{DBB3E63B-456C-4169-BFD6-94CE34CE9437} = {1C689689-795D-4A7E-A5D7-ADC84B78666B}
+		{ECB12F59-7BBA-4FC4-B98A-1640817F53EE} = {1C689689-795D-4A7E-A5D7-ADC84B78666B}
+		{5DB2589B-7817-4299-B3FE-1997F0025439} = {1C689689-795D-4A7E-A5D7-ADC84B78666B}
+		{DD47560E-63DC-4C25-ABC2-8A763FEB36C3} = {BB73DF82-0160-47E9-A1E8-C093178E9AD9}
+		{D8E4989E-312F-4AFC-8401-E3CF84EA82F8} = {6821688B-8EBA-4067-96EF-7C7B603D3756}
+		{BCEB2C1B-0B30-4109-8E90-AEE62125CF39} = {FE110C66-9081-43FB-997C-24AA09D7DDB4}
+		{0FE4F8D5-F3A6-4CEA-BC75-81E420CA16CA} = {ECB12F59-7BBA-4FC4-B98A-1640817F53EE}
+	EndGlobalSection
+EndGlobal

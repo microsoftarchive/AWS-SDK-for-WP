@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6F4A2C48-D23B-42C2-8E84-437156BAAF29}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Amazon</RootNamespace>
+    <AssemblyName>AWSWP7SDK</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>%24/AWS SDK for WP7/AWSWP7SDK</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>https://tfs1.interop.msftlabs.com/tfs/defaultcollection</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;CODE_ANALYSIS</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Amazon.Runtime\AWSCredentials.cs" />
+    <Compile Include="Amazon.Runtime\ConfigurationManager.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Util\Logger.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Util\StringUtils.cs" />
+    <Compile Include="Amazon.S3\AmazonS3.cs" />
+    <Compile Include="Amazon.S3\AmazonS3Client.cs" />
+    <Compile Include="Amazon.S3\AmazonS3Config.cs" />
+    <Compile Include="Amazon.S3\AmazonS3Exception.cs" />
+    <Compile Include="Amazon.S3\Model\CopyObjectRequest.cs" />
+    <Compile Include="Amazon.S3\Model\CopyObjectResponse.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteBucketPolicyRequest.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteBucketPolicyResponse.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteBucketRequest.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteBucketResponse.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteObjectRequest.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteObjectResponse.cs" />
+    <Compile Include="Amazon.S3\Model\DisableBucketLoggingRequest.cs" />
+    <Compile Include="Amazon.S3\Model\DisableBucketLoggingResponse.cs" />
+    <Compile Include="Amazon.S3\Model\EnableBucketLoggingRequest.cs" />
+    <Compile Include="Amazon.S3\Model\EnableBucketLoggingResponse.cs" />
+    <Compile Include="Amazon.S3\Model\GetACLRequest.cs" />
+    <Compile Include="Amazon.S3\Model\GetACLResponse.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketLocationRequest.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketLocationResponse.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketLoggingRequest.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketLoggingResponse.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketPolicyRequest.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketPolicyResponse.cs" />
+    <Compile Include="Amazon.S3\Model\GetObjectMetadataRequest.cs" />
+    <Compile Include="Amazon.S3\Model\GetObjectMetadataResponse.cs" />
+    <Compile Include="Amazon.S3\Model\GetObjectRequest.cs" />
+    <Compile Include="Amazon.S3\Model\GetObjectResponse.cs" />
+    <Compile Include="Amazon.S3\Model\GetPreSignedUrlRequest.cs" />
+    <Compile Include="Amazon.S3\IS3Response.cs" />
+    <Compile Include="Amazon.S3\Model\ListBucketsRequest.cs" />
+    <Compile Include="Amazon.S3\Model\ListBucketsResponse.cs" />
+    <Compile Include="Amazon.S3\Model\ListObjectsRequest.cs" />
+    <Compile Include="Amazon.S3\Model\ListObjectsResponse.cs" />
+    <Compile Include="Amazon.S3\Model\Owner.cs" />
+    <Compile Include="Amazon.S3\Model\PutBucketPolicyRequest.cs" />
+    <Compile Include="Amazon.S3\Model\PutBucketPolicyResponse.cs" />
+    <Compile Include="Amazon.S3\Model\PutBucketRequest.cs" />
+    <Compile Include="Amazon.S3\Model\PutBucketResponse.cs" />
+    <Compile Include="Amazon.S3\Model\PutObjectRequest.cs" />
+    <Compile Include="Amazon.S3\Model\PutObjectResponse.cs" />
+    <Compile Include="Amazon.S3\Model\ResponseHeaderOverrides.cs" />
+    <Compile Include="Amazon.S3\Model\S3AccessControlList.cs" />
+    <Compile Include="Amazon.S3\Model\S3Bucket.cs" />
+    <Compile Include="Amazon.S3\Model\S3BucketLoggingConfig.cs" />
+    <Compile Include="Amazon.S3\Model\S3Enumerations.cs" />
+    <Compile Include="Amazon.S3\Model\S3Error.cs" />
+    <Compile Include="Amazon.S3\Model\S3Grant.cs" />
+    <Compile Include="Amazon.S3\Model\S3Grantee.cs" />
+    <Compile Include="Amazon.S3\Model\S3Object.cs" />
+    <Compile Include="Amazon.S3\Model\S3Request.cs" />
+    <Compile Include="Amazon.S3\Model\S3Response.cs" />
+    <Compile Include="Amazon.S3\Model\SetACLRequest.cs" />
+    <Compile Include="Amazon.S3\Model\SetACLResponse.cs" />
+    <Compile Include="Amazon.S3\Model\TransferProgressArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.S3\Model\Tuple.cs" />
+    <Compile Include="Amazon.S3\Util\AmazonS3Util.cs" />
+    <Compile Include="Amazon.S3\Util\S3Constants.cs" />
+    <Compile Include="Amazon.SimpleDB\AmazonSimpleDB.cs" />
+    <Compile Include="Amazon.SimpleDB\AmazonSimpleDBClient.cs" />
+    <Compile Include="Amazon.SimpleDB\AmazonSimpleDBConfig.cs" />
+    <Compile Include="Amazon.SimpleDB\AmazonSimpleDBException.cs" />
+    <Compile Include="Amazon.SimpleDB\ISimpeDBResponse.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\Attribute.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\BatchDeleteAttributesRequest.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\BatchDeleteAttributesResponse.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\BatchPutAttributesRequest.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\BatchPutAttributesResponse.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\CreateDomainRequest.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\CreateDomainResponse.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\DeleteableItem.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\DeleteAttributesRequest.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\DeleteAttributesResponse.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\DeleteDomainRequest.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\DeleteDomainResponse.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\DomainMetadataRequest.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\DomainMetadataResponse.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\DomainMetadataResult.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\Error.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\ErrorResponse.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\GetAttributesRequest.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\GetAttributesResponse.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\GetAttributesResult.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\Item.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\ListDomainsRequest.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\ListDomainsResponse.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\ListDomainsResult.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\PutAttributesRequest.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\PutAttributesResponse.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\ReplaceableAttribute.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\ReplaceableItem.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\ResponseMetadata.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\SelectRequest.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\SelectResponse.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\SelectResult.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\SimpleDBResponse.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\UpdateCondition.cs" />
+    <Compile Include="Amazon.SimpleDB\Util\AmazonSimpleDBUtil.cs" />
+    <Compile Include="Amazon.SQS\IAmazonSQS.cs" />
+    <Compile Include="Amazon.SQS\AmazonSQSClient.cs" />
+    <Compile Include="Amazon.SQS\AmazonSQSConfig.cs" />
+    <Compile Include="Amazon.SQS\AmazonSQSException.cs" />
+    <Compile Include="Amazon.SQS\ISQSResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\AddPermissionRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\AddPermissionResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\Attribute.cs" />
+    <Compile Include="Amazon.SQS\Model\ChangeMessageVisibilityRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\ChangeMessageVisibilityResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\CreateQueueRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\CreateQueueResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\CreateQueueResult.cs" />
+    <Compile Include="Amazon.SQS\Model\DeleteMessageRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\DeleteMessageResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\DeleteQueueRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\DeleteQueueResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\Error.cs" />
+    <Compile Include="Amazon.SQS\Model\ErrorResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\GetQueueAttributesRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\GetQueueAttributesResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\GetQueueAttributesResult.cs" />
+    <Compile Include="Amazon.SQS\Model\ListQueuesRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\ListQueuesResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\ListQueuesResult.cs" />
+    <Compile Include="Amazon.SQS\Model\Message.cs" />
+    <Compile Include="Amazon.SQS\Model\ReceiveMessageRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\ReceiveMessageResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\ReceiveMessageResult.cs" />
+    <Compile Include="Amazon.SQS\Model\RemovePermissionRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\RemovePermissionResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\ResponseMetadata.cs" />
+    <Compile Include="Amazon.SQS\Model\SendMessageRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\SendMessageResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\SendMessageResult.cs" />
+    <Compile Include="Amazon.SQS\Model\SetQueueAttributesRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\SetQueueAttributesResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\SQSBaseResponse.cs" />
+    <Compile Include="Amazon.Util\AWSSDKUtils.cs" />
+    <Compile Include="AWSClientFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="AWSWP7SDK.FxCop" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

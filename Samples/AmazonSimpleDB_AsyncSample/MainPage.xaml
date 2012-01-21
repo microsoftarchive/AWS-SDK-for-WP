@@ -1,0 +1,87 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="AmazonSimpleDB_AsyncSample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Amazon SimpleDB" FontSize="36" />
+            <TextBlock Text="Working with Domains" Margin="9,-7,0,0" FontSize="28" />
+            <HyperlinkButton NavigateUri="/AttributesPage.xaml" 
+                             Content="Go to Working with Attributes" Height="30" 
+                             HorizontalAlignment="Center" 
+                             Margin="0,7,0,0" VerticalAlignment="Top" Width="Auto" />
+        </StackPanel>
+
+        <Grid Grid.Row="2" Margin="12,0,12,0">
+            <ScrollViewer Background="#FF292525" Padding="4 10 4 4" VerticalScrollBarVisibility="Auto" Grid.Row="2" Style="{StaticResource ScrollViewerStyle1}">
+                <ScrollViewer.Content>
+                    <StackPanel Grid.Row="1"  Orientation="Vertical">
+                        <TextBlock Margin="10 0 0 0" Text="Enter Domain Name"  />
+                        <TextBox Margin="10 0 0 0" Width="400" 
+                                 HorizontalAlignment="Left" Text="{Binding Path=DomainName, Mode=TwoWay}" TextChanged="TextBox_TextChanged" />
+                        <Button Content="CreateDomain" Width="230" FontSize="20"
+                                HorizontalAlignment="Left" Click="CreateDomainButton_Click"
+                                IsEnabled="{Binding Path=IsDomainNameSet, Mode=TwoWay}" />
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            Margin="12,2,0,0"
+                            Text="{Binding Path=CreateDomainMessage}"
+                            TextWrapping="Wrap" />
+                        <Button Content="ListDomain" Width="230" FontSize="20" 
+                                HorizontalAlignment="Left" Click="ListDomainButton_Click" />
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            Margin="12,2,0,0"
+                            Text="{Binding Path=ListDomainMessage}"
+                            TextWrapping="Wrap" />
+                        <ListBox Height="120"
+                                 MaxHeight="200"
+                                 HorizontalAlignment="Stretch"
+                                 BorderThickness=".5"
+                                 BorderBrush="LightGray"
+                                 Margin="12 0 0 0"
+                                 Padding="6"
+                                 SelectedIndex="{Binding Path=SelectedIndex, Mode=TwoWay}"
+                                 ItemsSource="{Binding Path=DomainNameList}"  />
+                        <Button Content="Domain Metadata" Width="230" FontSize="20" 
+                                HorizontalAlignment="Left" Click="DomainMetadataButton_Click" 
+                                IsEnabled="{Binding Path=IsDomainNameSet, Mode=TwoWay}" />
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            Margin="12,2,0,0"
+                            Text="{Binding Path=DomainMetadataMessage}"
+                            TextWrapping="Wrap" />
+                        <Button Content="Delete Domain" Width="230" FontSize="20" 
+                                HorizontalAlignment="Left" Click="DeleteDomainButton_Click"
+                                IsEnabled="{Binding Path=IsDomainNameSet, Mode=TwoWay}"
+                                />
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            Margin="12,2,0,0"
+                            Text="{Binding Path=DomainDeleteMessage}"
+                            TextWrapping="Wrap" />
+                    </StackPanel>
+                </ScrollViewer.Content>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

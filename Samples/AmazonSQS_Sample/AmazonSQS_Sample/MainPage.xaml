@@ -1,0 +1,123 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="AmazonSQS_Sample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:AmazonSQS_Sample"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+    
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid Background="Transparent" Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Amazon Web Services" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="SQS Sample" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+        <!--Clear-->
+        <Button FontSize="20" HorizontalAlignment="Right" Content="Clear" Grid.Row="1" Click="btnClear_Click" VerticalContentAlignment="Stretch" Padding="10,0" />
+        <ScrollViewer Background="#FF292525" VerticalScrollBarVisibility="Auto" Grid.Row="2" Style="{StaticResource ScrollViewerStyle1}">
+            <ScrollViewer.Content>
+                <!--Contro panel-->
+                <StackPanel >
+                    <TextBlock Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                            Text="Enter Name of Queue to Create: " Margin="12,4,0,0" />
+                    <TextBox Name="QueueNameTextBox" Width="420" HorizontalAlignment="Left" 
+                             FontSize="22" Text="{Binding Path=QueueName, Mode=TwoWay}" TextChanged="QueueNameTextBox_TextChanged" />
+                    <!--Create Queue button-->
+                    <Button Content="Create Queue"                             
+                            Height="60" Width="210" HorizontalAlignment="Left"   
+                            VerticalContentAlignment="Stretch" Padding="10,0"
+                            FontSize="20" Click="btnCreateQueue_Click"
+                            IsEnabled="{Binding Path=EnableCreateQueueButton}"/>
+                    <TextBlock Margin="12 0 0 0"
+                            Width="420"
+                            HorizontalAlignment="Left" 
+                            FontSize="20" 
+                            TextWrapping="Wrap"
+                            Text="{Binding Path=QueueUrl}" />
+                    <!--List Queue -->
+                    <Button Content="List Queues" 
+                            Height="60" HorizontalAlignment="Left" 
+                            VerticalContentAlignment="Stretch" Width="210"
+                            FontSize="20" Click="btnListQueue_Click"
+                            Padding="10,0" />
+                    <ListBox Height="120" Width="420"
+                            HorizontalAlignment="Left"
+                            BorderThickness=".5"
+                            BorderBrush="LightGray"
+                            Margin="12 0 0 0"
+                            Padding="6"
+                             SelectedIndex="{Binding Path=SelectedQueueIndex, Mode=TwoWay}"
+                            ItemsSource="{Binding Path=QueueNames}"/>
+                    <TextBlock Height="30" 
+                            HorizontalAlignment="Left"                     
+                            VerticalAlignment="Center" 
+                            Margin="12 0 0 0"
+                            Text="Enter Message to Send: "/>
+                    <Grid>
+                    <TextBox Name="SendMessageTextBox" Width="320" HorizontalAlignment="Left" 
+                            FontSize="22"
+                            Text="{Binding Path=MessageToSend, Mode=TwoWay}"
+                            IsEnabled="{Binding Path=HaveQueueUrl}" TextChanged="SendMessageTextBox_TextChanged" />
+                    <Button Content="Send" 
+                            Height="60"  Width="100" HorizontalAlignment="Right" 
+                            VerticalContentAlignment="Stretch" FontSize="20" 
+                            Click="btnSendMessage_Click" 
+                            IsEnabled="{Binding Path=EnableSendMessageButton}"
+                            Padding="10,0" /></Grid>
+                    <TextBlock Width="420" HorizontalAlignment="Left" 
+                            Margin="12 0 0 0"
+                            FontSize="22"
+                            Text="{Binding Path=MessageSentNotification}"/>
+                    <Button Content="Receive Message"  
+                            Height="60" HorizontalAlignment="Left" 
+                            VerticalContentAlignment="Stretch" Width="210"
+                            FontSize="20" Click="btnReceiveMessage_Click" 
+                            IsEnabled="{Binding Path=HaveQueueUrl}" Padding="10,0" />
+                    <TextBlock HorizontalAlignment="Left" 
+                            Margin="12 0 0 0"
+                            FontSize="22"
+                            Text="{Binding Path=ReceivedMessage}"/>
+                    <!--Delete queue-->
+                    <Button Content="Delete Queue"  
+                            Height="60" HorizontalAlignment="Left"  
+                            VerticalContentAlignment="Stretch" Width="210"
+                            FontSize="20" Click="btnDeleteQueue_Click"
+                            IsEnabled="{Binding Path=HaveQueueUrl}" Padding="10,0" />
+                    <TextBlock HorizontalAlignment="Left" 
+                            Margin="12 0 0 0"
+                            FontSize="20" 
+                            Text="{Binding Path=MessageDeletedNotification}"
+                               TextWrapping="Wrap"/>
+                    <Button Content="Get Attribute"  
+                            Height="60" HorizontalAlignment="Left" 
+                            VerticalAlignment="Center" Width="210"
+                            FontSize="20" Click="btnGetQueueAttribute_Click" 
+                            IsEnabled="{Binding Path=HaveQueueUrl}" Padding="10,0" />
+                    <TextBlock HorizontalAlignment="Left" 
+                            Text="Attribute for VisibilityTimeout"
+                            Margin="12 0 0 0"
+                            FontSize="22" />
+                    <TextBlock HorizontalAlignment="Left" 
+                            Margin="12 0 0 12"
+                            FontSize="22" 
+                            Text="{Binding Path=AttributeValue}"/>
+                </StackPanel>
+            </ScrollViewer.Content>
+        </ScrollViewer>
+    </Grid>
+</phone:PhoneApplicationPage>

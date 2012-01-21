@@ -1,0 +1,253 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="AmazonSimpleDB_AsyncSample.AttributesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Amazon SimpleDB" FontSize="36" />
+            <TextBlock Text="Working with Attributes" Margin="9,-7,0,0" FontSize="28" />
+            <HyperlinkButton NavigateUri="/MainPage.xaml" 
+                             Content="Go to Working with Domains" Height="30" 
+                             HorizontalAlignment="Center" 
+                             Margin="0,7,0,0" VerticalAlignment="Top" Width="Auto" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid Grid.Row="1" Margin="12,0,12,0">
+            <ScrollViewer Background="#FF292525" Padding="4 10 4 4" VerticalScrollBarVisibility="Auto" Grid.Row="2" Style="{StaticResource ScrollViewerStyle1}">
+                <ScrollViewer.Content>
+                    <StackPanel Grid.Row="1"  Orientation="Vertical">
+                        <!--Start Populate Domains List-->
+                        <TextBlock
+                            Margin="12,4,0,0"
+                            VerticalAlignment="Bottom"
+                            Text="List of Domains " />
+                        <ListBox HorizontalAlignment="Stretch"
+                                 BorderThickness=".5"
+                                 BorderBrush="LightGray"
+                                 Margin="12 0 12 0"
+                                 Padding="6"
+                                 MinHeight="120"
+                                 MaxHeight="160"
+                                 SelectedIndex="{Binding Path=SelectedIndexDomain, Mode=TwoWay}"
+                                 ItemsSource="{Binding Path=DomainNameList}" >
+                            </ListBox>
+                        <!--End Populate Domains List-->
+                        
+                        <!--Start Populate Items List-->
+                        <TextBlock
+                            VerticalAlignment="Bottom"
+                            Margin="12,4,0,0"
+                            Text="{Binding Path=ItemsNameMessage}" />
+                        <ListBox HorizontalAlignment="Stretch"
+                                 BorderThickness=".5"
+                                 BorderBrush="LightGray"
+                                 MinHeight="120"
+                                 MaxHeight="160"
+                                 Padding="6"
+                                 Margin="12 0 12 0"
+                                 SelectedIndex="{Binding Path=SelectedIndexItem, Mode=TwoWay}"
+                                 ItemsSource="{Binding Path=ItemsNameList}" >
+                        </ListBox>
+                        
+                        <!--Start Populate Items List-->
+                        
+                        <!--Start Put Attributes-->
+                        <Border BorderBrush="LightGray" BorderThickness=".5" Padding="1 1 1 8" CornerRadius="10" Margin="0 10 0 0">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                           Text="Enter Name of Item." 
+                                           Margin="12,4,0,0"
+                                           TextWrapping="Wrap" />
+                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                           Text="(For Batch operations enter Item names separated with comma( , ). For eg Item1, Item2. This sample supports only 2 items.)" 
+                                           Margin="12,4,0,0"
+                                           FontSize="18"
+                                           TextWrapping="Wrap" />
+                                <TextBox Width="420" HorizontalAlignment="Left" FontSize="22" 
+                                         Text="{Binding Path=ItemName, Mode=TwoWay}"
+                                         IsEnabled="{Binding Path=IsDomainSelected, Mode=TwoWay}" />
+                                <TextBlock Text="Enter Attribute's Name and Value" 
+                                           HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                           Margin="12,4,0,0" TextWrapping="Wrap" />
+                                <TextBlock Text="Name and Value separated with commas in this format name1-value1, name2-value2" 
+                                           HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                           Margin="12,4,0,0" TextWrapping="Wrap"
+                                           FontSize="18" />
+                                <TextBox HorizontalAlignment="Left" FontSize="22" 
+                                         Width="420"
+                                         Text="{Binding Path=AttributesAndValuesToPut, Mode=TwoWay}"
+                                         IsEnabled="{Binding Path=AcceptAttributesAndValues, Mode=TwoWay}"
+                                         />
+                                <Button Content="Put Attributes" 
+                                        FontSize="22" 
+                                        HorizontalAlignment="Left" 
+                                        Click="btnPutAttributes_Click"
+                                        IsEnabled="{Binding Path=IsSingleOperation, Mode=TwoWay}"/>
+                                <TextBlock Margin="12,4,0,0"
+                                           Text="{Binding Path=SomeMessage}"/>
+                            </StackPanel>
+                        </Border>
+                        <!--End Put Attributes-->
+
+                        <!--Start Get Attributes-->
+                        <Border BorderBrush="LightGray" BorderThickness=".5" Padding="1 1 1 8" CornerRadius="10" Margin="0 10 0 0">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Enter name(s) of Attributes separated with commas" 
+                                       HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                       Margin="12,4,0,0" TextWrapping="Wrap" />
+                                <TextBox HorizontalAlignment="Left" FontSize="22" 
+                                     Width="420"
+                                     Text="{Binding Path=AttributesForQueury, Mode=TwoWay}"
+                                     IsEnabled="{Binding Path=AcceptAttributesAndValues, Mode=TwoWay}" />
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="Get Attributes"
+                                        HorizontalAlignment="Left" 
+                                        VerticalContentAlignment="Stretch"
+                                        Width="210"
+                                        FontSize="20"
+                                        IsEnabled="{Binding Path=IsSingleOperation, Mode=TwoWay}"
+                                        Click="btnGetAttributes_Click" />
+                                    <Button Content="Delete Attributes"
+                                        FontSize="20"
+                                        HorizontalAlignment="Right"
+                                        IsEnabled="{Binding Path=IsSingleOperation, Mode=TwoWay}"
+                                        Click="btnDeletetAttributes_Click" />
+                                </StackPanel>
+                                <TextBlock Margin="12,0,0,0"
+                                       Text="{Binding Path=FetchingOrDeletingAttributeMessage}"/>
+                                <ListBox Height="120" 
+                                     HorizontalAlignment="Stretch"
+                                     BorderThickness=".5"
+                                     BorderBrush="LightGray"
+                                     Margin="12 0 12 0"
+                                     Padding="6"
+                                     MaxHeight="300"
+                                     SelectedIndex="{Binding Path=AttributeSelectedIndex, Mode=TwoWay}"
+                                     ItemsSource="{Binding Path=Attributes}" >
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="LightGray" BorderThickness="0 0 0 .5" CornerRadius="3">
+                                                <StackPanel>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Text="Item: " />
+                                                        <TextBlock Text="{Binding Path=Name}" />
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Text="Value: " />
+                                                        <TextBlock Text="{Binding Path=Value}" />
+                                                    </StackPanel>
+                                                </StackPanel>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </StackPanel>
+                        </Border>
+                        <!--End Get Attributes-->
+
+                        <!--Start Batch Put Attributes-->
+                        <Button Content="Batch Put Attributes" FontSize="22" HorizontalAlignment="Left" 
+                                IsEnabled="{Binding Path=IsBatchOperation, Mode=TwoWay}"
+                                Click="btnBatchPutAttributes_Click" />
+                        <TextBlock Margin="12,0,0,0"
+                                       Text="{Binding Path=BatchPutMessage}"/>
+                        <Button Content="Batch Delete Attributes" FontSize="22" HorizontalAlignment="Left" 
+                                IsEnabled="{Binding Path=IsBatchOperation, Mode=TwoWay}"
+                                Click="btnBatchDeleteAttributes_Click" />
+                        <TextBlock Margin="12,0,0,0"
+                                       Text="{Binding Path=BatchDeleteMessage}"/>
+
+                        <!--End Batch Put Attributes-->
+
+                        <!--Start Select Querries-->
+                        <Border BorderBrush="LightGray" BorderThickness=".5" Padding="1 1 1 8" CornerRadius="10" Margin="0 10 0 0">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Enter SELECT query" 
+                                       HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                       Margin="12,4,0,0" TextWrapping="Wrap" />
+                                <TextBox HorizontalAlignment="Left" FontSize="22" 
+                                 Width="420"
+                                 Text="{Binding Path=SelectQuery, Mode=TwoWay}"
+                                 TextWrapping="Wrap"
+                                 IsEnabled="{Binding Path=IsDomainSelected, Mode=TwoWay}"/>
+                                <Button Content="Execute SELECT"
+                                HorizontalAlignment="Left" 
+                                VerticalContentAlignment="Stretch"
+                                Width="210"
+                                FontSize="20"
+                                IsEnabled="{Binding Path=IsDomainSelected, Mode=TwoWay}"
+                                Click="btnSelectQuery_Click" />
+                                <TextBlock Text="{Binding Path=SelectQueryMessage}" 
+                                   HorizontalAlignment="Left" VerticalAlignment="Center"
+                                   Margin="12,2,0,2" TextWrapping="Wrap"
+                                   />
+                                <ListBox Height="120" 
+                                     HorizontalAlignment="Stretch"
+                                     BorderThickness=".5"
+                                     BorderBrush="LightGray"
+                                     Margin="12 0 12 0"
+                                     Padding="6"
+                                     MaxHeight="300"
+                                     ItemsSource="{Binding Path=SelectResultAttributes}" >
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="LightGray" BorderThickness="0 0 0 0" CornerRadius="3">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="Item: " />
+                                                    <TextBlock Text="{Binding Path=ItemName}" />
+                                                    <TextBlock Text=", " />
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Text="Name: " />
+                                                        <TextBlock Text="{Binding Path=Attribute}" />
+                                                    </StackPanel>
+                                                    <TextBlock Text=", " />
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Text="Value: " />
+                                                        <TextBlock Text="{Binding Path=Value}" />
+                                                    </StackPanel>
+                                                </StackPanel>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </StackPanel>
+                        </Border>
+                        <!--End Select Querries-->
+                    </StackPanel>
+                </ScrollViewer.Content>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
