@@ -19,7 +19,8 @@ Table of Content:
 9) Add AWS References to the project
 10) Edit App.Config
 11) Using the AWS Namespace
-12) Start Writing Code	
+12) Start Writing Code
+13) Note about building the msi from source code
 
 
 
@@ -119,5 +120,6 @@ http://channel9.msdn.com/Blogs/Interoperability/AWS-SDK-for-Windows-Phone-SQS-sa
 http://channel9.msdn.com/Blogs/Interoperability/AWS-SDK-for-Windows-Phone-SimpleDB-sample-walkthrough
 
 
- 
- 
+13) Note about building the msi from source code
+
+The setup project in the source code is not included in the build by default. Before building it, make sure that you modify the solution to strong name sign AWSWP7SDK.dll, otherwise the installer will not be able to add it to the GAC. You may find more details on strong name signing at http://msdn.microsoft.com/en-us/library/h4fa028b%28v=vs.80%29.aspx
